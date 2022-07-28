@@ -13,9 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/404', function () {
+    return abort(404);
+});
+
 Route::get('{any}', function () {
     return view('storefront.index');
 })
-    // exclude /api/v1/ from the route
-    ->where('any', '^(?!api/).*$')
+    ->where('any', '^(?!api/|404).*$')
     ->name('storefront.index');
