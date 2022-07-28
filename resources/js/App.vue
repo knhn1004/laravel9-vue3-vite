@@ -1,3 +1,3 @@
 <template>
-    How To Install Vue 3 in Laravel 9 with Vite - TechvBlogs
+    <h1>Laravel 9 + Vue 3 (Vite)</h1>
 </template>
