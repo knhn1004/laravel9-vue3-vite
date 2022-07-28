@@ -17,8 +17,12 @@ Route::get('/404', function () {
     return abort(404);
 });
 
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
+});
+
 Route::get('{any}', function () {
     return view('storefront.index');
 })
-    ->where('any', '^(?!api/|404).*$')
+    ->where('any', '^(?!api/).*$')
     ->name('storefront.index');
